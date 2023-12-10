@@ -1,16 +1,16 @@
 $bg1: #252525;
-$bg2: #393939;
+$bg2: #313131;
 $txt1: #f5f5f5;
-$txt2: #dedede;
-$ui1: #424242;
-$ui2: #575757;
+$txt2: #d2d2d2;
+$ui1: #373737;
+$ui2: #4a4a4a;
 $active: #3ca7f9;
 $active2: #003cc1;
 @import url('https://fonts.cdnfonts.com/css/smooch-sans');
 
-$global-border-radius: 3vmin;
+$global-border-radius: 2vmin;
 
-$logo-size: 10vmin;
+$logo-size: 7vmin;
 
 * {
     box-sizing: border-box;
@@ -21,51 +21,167 @@ $logo-size: 10vmin;
 }
 
 .button {
-    height: auto;
     width: 100%;
-    padding: 2.5vmin;
+    padding: 1vmin;
     border-radius: $global-border-radius;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: $txt2;
     background: $ui1;
-    font-size: 3vmin;
+    font-size: 3.5vmin;
     transition: .35s;
     cursor: pointer;
+    outline: none;
+    .btnico {
+        position: absolute;
+        left: 1.5vmin;
+        transition: .15s;
+        opacity: 0;
+    }
     &:hover {
-        transform: scale(110%) translateY(-1vmin);
+        transform: scale(110%);
+        box-shadow: 0 0 1.5rem $active;
         background: $active;
         color: $bg1;
         font-weight: bold;
     }
 }
 
-header {
-    height: 75vmin;
-    width: 100%;
-    background: $bg1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-grow: 0;
-    flex-shrink: 0;
-    .buttonWrapper {
-        // background-color: pink; //for testing
-        height: auto;
-        width: 50vmin;
-        padding: 5vmin;
+.menu {
+    height: 100dvh;
+    width: 100dvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    #syncing {
+        height: 95%;
+        width: 100%;
         position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: -95%;
+        left: 0;
+        background: $bg2;
+        z-index: 596;
+        border-top: .35vmin solid $ui1;
+        border-bottom: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .35s;
+        * {
+            margin: .5vmin;
+        }
+        .close {
+            font-size: 2vmin;
+            border: .2vmin solid $ui2;
+            color: $txt2;
+            position: absolute;
+            top: 0;
+            transition: .35s;
+            right: 1vmin;
+            cursor: pointer;
+            padding: 1vmin;
+            border-radius: 1vmin;
+            background: $ui1;
+            aspect-ratio: 1/1;
+            &:hover {
+                transform: scale(110%);
+            }
+            &:active {
+                background: $ui2;
+                border-color: $active;
+            }
+        }
+        .syncingIcon {
+            color: $txt1;
+            font-size: 10vmin;
+        }
+        .syncingText {
+            font-size: 3vmin;
+            color: $txt2;
+            font-weight: 400;
+            animation: c1 2s linear infinite;
+            @keyframes c1 {0%{opacity: 0}50%{opacity: 1}100%{opacity: 0}}
+        }
+        code {
+            height: 25vmin;
+            width: 50vmin;
+            background: $ui1;
+            border-radius: $global-border-radius;
+            border: .2vmin solid $ui2;
+            word-wrap: break-word;
+            text-wrap: wrap;
+            overflow: hidden;
+            position: relative;
+            flex-direction: column;
+            padding: 1vmin;
+            .wrapper {
+                padding-top: 2vmin;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: calc(100% - 3.5vmin);
+                width: 100%;
+                z-index: 90;
+                overflow-y: auto;
+                &::-webkit-scrollbar { width: 1.5vmin; }
+                &::-webkit-scrollbar-track { background: #00000000; }
+                &::-webkit-scrollbar-thumb {
+                  background: #888;
+                  border-radius: $global-border-radius;}
+                &::-webkit-scrollbar-thumb:hover { background: #555; }
+            }
+            h1 {
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                margin: 0;
+                width: 100%;
+                z-index: 92;
+                height: auto;
+                padding: 1vmin;
+                padding-left: 2vmin;
+                font-size: 2.5vmin;
+                color: $txt2;
+                background: linear-gradient(180deg, $ui1 65%, rgba(0,0,0,0) 100%);
+            }
+            p {
+                width: 100%;
+                display: block;
+                margin: 0;
+                padding: 0;
+                color: $txt2;
+                user-select: none;
+            }
+        }
     }
-    h1 {
-        color: $txt1;
-        font-size: $logo-size;
-        text-shadow: 0 0 3rem $txt1;
-        position: absolute;
-        left: 3.5rem;
-        top: 50%;
-        transform: translateY(-50%);
+    #home {
+        height: 100%;
+        width: 100%;
+        background: $bg1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-grow: 0;
+        flex-shrink: 0;
+        .buttonWrapper {
+            // background-color: pink; //for testing
+            height: 50vmin;
+            width: 35vmin;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+            color: $txt1;
+            font-size: $logo-size;
+            text-shadow: 0 0 3rem $txt1;
+            margin-right: 20vmin;
+            font-weight: 400;
+        }
     }
 }
