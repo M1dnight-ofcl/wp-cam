@@ -20,6 +20,50 @@ $logo-size: 7vmin;
     font-family: 'Smooch Sans', sans-serif;
 }
 
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 35vmin;
+    width: 50vmin;
+    padding: 5vmin;
+    border-radius: $global-border-radius;
+    background: $ui1;
+    border: .2vmin solid $ui2;
+    z-index: 9999;
+    transition: 1s;
+    h1 {
+        font-size: 5vmin;
+        color: $txt1;
+    }
+    p {
+        font-size: 3vmin;
+        color: $txt2;
+    }
+    .close {
+        font-size: 1.5vmin;
+        border: .2vmin solid $ui2;
+        color: $txt2;
+        position: absolute;
+        top: 1vmin;
+        transition: .35s;
+        right: 1vmin;
+        cursor: pointer;
+        padding: .75vmin;
+        border-radius: 1vmin;
+        background: $ui1;
+        aspect-ratio: 1/1;
+        &:hover {
+            transform: scale(110%);
+        }
+        &:active {
+            background: $ui2;
+            border-color: $active;
+        }
+    }
+}
+
 .button {
     width: 100%;
     padding: 1vmin;

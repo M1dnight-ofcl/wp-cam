@@ -7,6 +7,50 @@
   font-family: "Smooch Sans", sans-serif;
 }
 
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 35vmin;
+  width: 50vmin;
+  padding: 5vmin;
+  border-radius: 2vmin;
+  background: #373737;
+  border: 0.2vmin solid #4a4a4a;
+  z-index: 9999;
+  transition: 1s;
+}
+.alert h1 {
+  font-size: 5vmin;
+  color: #f5f5f5;
+}
+.alert p {
+  font-size: 3vmin;
+  color: #d2d2d2;
+}
+.alert .close {
+  font-size: 1.5vmin;
+  border: 0.2vmin solid #4a4a4a;
+  color: #d2d2d2;
+  position: absolute;
+  top: 1vmin;
+  transition: 0.35s;
+  right: 1vmin;
+  cursor: pointer;
+  padding: 0.75vmin;
+  border-radius: 1vmin;
+  background: #373737;
+  aspect-ratio: 1/1;
+}
+.alert .close:hover {
+  transform: scale(110%);
+}
+.alert .close:active {
+  background: #4a4a4a;
+  border-color: #3ca7f9;
+}
+
 .button {
   width: 100%;
   padding: 1vmin;
