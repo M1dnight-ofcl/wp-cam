@@ -1,0 +1,71 @@
+$bg1: #252525;
+$bg2: #393939;
+$txt1: #f5f5f5;
+$txt2: #dedede;
+$ui1: #424242;
+$ui2: #575757;
+$active: #3ca7f9;
+$active2: #003cc1;
+@import url('https://fonts.cdnfonts.com/css/smooch-sans');
+
+$global-border-radius: 3vmin;
+
+$logo-size: 10vmin;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: 'Smooch Sans', sans-serif;
+}
+
+.button {
+    height: auto;
+    width: 100%;
+    padding: 2.5vmin;
+    border-radius: $global-border-radius;
+    border: none;
+    color: $txt2;
+    background: $ui1;
+    font-size: 3vmin;
+    transition: .35s;
+    cursor: pointer;
+    &:hover {
+        transform: scale(110%) translateY(-1vmin);
+        background: $active;
+        color: $bg1;
+        font-weight: bold;
+    }
+}
+
+header {
+    height: 75vmin;
+    width: 100%;
+    background: $bg1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    .buttonWrapper {
+        // background-color: pink; //for testing
+        height: auto;
+        width: 50vmin;
+        padding: 5vmin;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    h1 {
+        color: $txt1;
+        font-size: $logo-size;
+        text-shadow: 0 0 3rem $txt1;
+        position: absolute;
+        left: 3.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
