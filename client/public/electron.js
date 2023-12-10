@@ -8,7 +8,7 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    title: "WP Cam: Config Menu",
+    title: "WP Cam: {status}",
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
