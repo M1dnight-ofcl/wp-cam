@@ -4,6 +4,6 @@ start yarn dev
 cd ..
 echo "Starting Frontend Server"
 cd client
-start yarn start
+start yarn dev
 cd ..
 echo "Finished!"
