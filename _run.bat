@@ -1,10 +1,12 @@
-@echo "[92mStarting Dev Server...[0m"
-@echo "[96m> Starting Server Script[0m"
+@echo off
+cls
+echo Starting Dev Server...
+echo Starting Server Script
 cd server
 start "Backend Script" yarn start
 cd ..
-@echo "[96m> Starting Config Menu[0m"
+echo Starting Config Menu
 cd client
 start "Frontend Script" yarn dev
 cd ..
-@echo "[92mFinished![0m"
+pause

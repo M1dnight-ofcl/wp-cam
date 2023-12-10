@@ -6,21 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsRotate, faCaretDown, faClose } from '@fortawesome/free-solid-svg-icons'
 
 const App = (prop) => {
-  const Alert = (prop) => {
-    return (
-      <div className='alert'>
-        <FontAwesomeIcon icon={faClose} className='close' onClick={(e) => {
-          e.preventDefault();
-          e.target.parentElement.style.top = "200dvh";
-        }} />
-        <h1>{prop.title}</h1>
-        <hr/><br/>
-        <p>
-          {prop.info}
-        </p>
-      </div>
-    )
-  }
   var [Status, setStatus] = useState("Home");
   const [Output, setOutput] = useState([]);
   const generateNewID = () => {
@@ -75,9 +60,7 @@ const App = (prop) => {
   })
   return (
     <div className='menu'>
-
-      <Alert title="Important!!" info="Please verify that you have the 'override wallpaper' setting enabled to use this plugin. It can be found in the general settings tab." />
-
+      
       <div id='syncing'>
         <FontAwesomeIcon icon={faCaretDown} className='close' onClick={(e) => {
           e.preventDefault();
